@@ -34,7 +34,7 @@ class Settings {
         </div>
         <br>
         <div class="ac-game-settings-acwing">
-            <img width="30" src="https://app5912.acapp.acwing.com.cn/static/image/settings/acwing_logo.png">
+            <img width="30" src="https://app6279.acapp.acwing.com.cn/static/image/settings/acwing_logo.png">
             <br>
             <div>
                 Ac Login
@@ -74,7 +74,7 @@ class Settings {
         </div>
         <br>
         <div class="ac-game-settings-acwing">
-            <img width="30" src="https://app5912.acapp.acwing.com.cn/static/image/settings/acwing_logo.png">
+            <img width="30" src="https://app6279.acapp.acwing.com.cn/static/image/settings/acwing_logo.png">
             <br>
             <div>
                 Ac Login
@@ -145,7 +145,7 @@ class Settings {
         this.$login_error_message.empty();
 
         $.ajax({
-            url: "https://app5912.acapp.acwing.com.cn/settings/login/",
+            url: "https://app6279.acapp.acwing.com.cn/settings/login/",
             type: "GET",
             data: {
                 username: username,
@@ -172,7 +172,7 @@ class Settings {
 		this.$register_error_message.empty();
 		
 		$.ajax({
-			url: "https://app5912.acapp.acwing.com.cn/settings/register/",
+			url: "https://app6279.acapp.acwing.com.cn/settings/register/",
 			type: "GET",
             data: {
                 username: username,
@@ -196,7 +196,7 @@ class Settings {
 		if (this.platform === "ACAPP") return false;
 
 		$.ajax({
-			url: "https://app5912.acapp.acwing.com.cn/settings/logout/",
+			url: "https://app6279.acapp.acwing.com.cn/settings/logout/",
 			type: "GET",
 			success: function(resp) {
 				console.log(resp);
@@ -226,7 +226,7 @@ class Settings {
 		let outer = this;
 
 		$.ajax ({
-			url: "https://app5912.acapp.acwing.com.cn/settings/getinfo/",
+			url: "https://app6279.acapp.acwing.com.cn/settings/getinfo/",
 			type: "GET",
 			data: {
 				platform: outer.platform,
