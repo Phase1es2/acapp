@@ -66,8 +66,10 @@ class Player extends AcGameObject {
             return false;
         });
         this.playground.game_map.$canvas.mousedown(function(e) {
+
             if(outer.playground.state !== "fighting")
-                return false;
+                return true;
+
             const rect = outer.ctx.canvas.getBoundingClientRect();
             if(e.which === 3) {
                 let tx = (e.clientX - rect.left) / outer.playground.scale;
@@ -106,7 +108,18 @@ class Player extends AcGameObject {
             }
         });
 
-        $(window).keydown(function(e) {
+        this.playground.game_map.$canvas.keydown(function(e) {
+            if(e.which === 13) {
+                if(outer.playground.mode === "multi mode"){ //open chat
+                    outer.playground.chat_field.show_input();
+                    return false;
+                }
+            } else if (e.which === 27){
+                if(outer.playground.mode === "multi mode") {
+                    outer.playground.chat_field.hide_input();
+                }
+            }
+
             if(outer.playground.state !== "fighting")
                 return true;
 
@@ -198,7 +211,7 @@ class Player extends AcGameObject {
         this.damage_x = Math.cos(angle);
         this.damage_y = Math.sin(angle);
         this.damage_speed = damage * 100;
-        this.speed *= 0.8;
+        this.speed *= 1.2;
 
     }
 
